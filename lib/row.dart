@@ -31,37 +31,47 @@ class RowWidget extends StatelessWidget {
             ),
           ],
         ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        body: Column(
           children: [
-            Column(
+            const Row(children: [
+              Icon(Icons.star),
+              Icon(Icons.star),
+              Icon(Icons.star),
+              Icon(Icons.start),
+            ]),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset(
-                  'assets/2g0x.jpg',
-                  width: 200,
-                  height: 100,
+                Column(
+                  children: [
+                    Image.asset(
+                      'assets/2g0x.jpg',
+                      width: 200,
+                      height: 100,
+                    ),
+                    const Text('Kuroko'),
+                  ],
                 ),
-                const Text('Kuroko'),
-              ],
-            ),
-            Column(
-              children: [
-                Image.asset(
-                  'assets/sanaku.jpg',
-                  width: 200,
-                  height: 100,
+                Column(
+                  children: [
+                    Image.asset(
+                      'assets/sanaku.jpg',
+                      width: 200,
+                      height: 100,
+                    ),
+                    const Text('Bleach anime'),
+                  ],
                 ),
-                const Text('Bleach anime'),
-              ],
-            ),
-            Column(
-              children: [
-                Image.asset(
-                  'assets/bleach.jpg',
-                  width: 100,
-                  height: 100,
+                Column(
+                  children: [
+                    Image.asset(
+                      'assets/bleach.jpg',
+                      width: 100,
+                      height: 100,
+                    ),
+                    const Text('Bleach anime'),
+                  ],
                 ),
-                const Text('Bleach anime'),
               ],
             ),
           ],
