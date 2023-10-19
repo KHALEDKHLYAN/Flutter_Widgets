@@ -25,30 +25,38 @@ class RowWidget extends StatelessWidget {
               icon: const Icon(Icons.search_rounded),
               onPressed: () {},
             ),
-            IconButton(
-              icon: const Icon(Icons.book_online_sharp),
-              onPressed: () {},
-            ),
           ],
         ),
         body: Column(
           children: [
-            const Row(children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Image.asset('assets/2g0x.jpg',
+                      ),
+                ),
+              ],
+            ),
+             const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
               Icon(Icons.star),
               Icon(Icons.star),
-              Icon(Icons.star),
-              Icon(Icons.start),
+              Icon(Icons.star_half),
+              Icon(Icons.star_half),
+              Icon(Icons.star_outline),
+              Icon(Icons.star_outline),
             ]),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
+                Column(    
                   children: [
                     Image.asset(
                       'assets/2g0x.jpg',
                       width: 200,
                       height: 100,
-                    ),
+                    ), 
                     const Text('Kuroko'),
                   ],
                 ),
