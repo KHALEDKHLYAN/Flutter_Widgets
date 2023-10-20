@@ -12,17 +12,34 @@ class MyListView extends StatelessWidget {
         appBar: AppBar(
           title: const Text('ListView'),
           backgroundColor: Colors.deepOrange,
-      ),
-      body: Container(
-        child: ListView(
+        ),
+        body: ListView(
+          itemExtent: 100.0,
           children: [
-            ListTile(title: Text("Item 1")),
+            ListTile(
+              leading: const Icon(Icons.alarm_rounded),
+              title: const Text("Alarms"),
+              subtitle: const Text('Weekly Alarms'),
+              trailing: const Text('4500'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.alarm_rounded),
+              title: const Text("Alarms"),
+              subtitle: const Text('Weekly Alarms'),
+              trailing: const Text('4500'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.alarm_rounded),
+              title: const Text("Alarms"),
+              subtitle: const Text('Weekly Alarms'),
+              trailing: const Text('4500'),
+              onTap: () {},
+            ),
           ],
         ),
       ),
-      ),
-      
-      )
-      ;
+    );
   }
 }
