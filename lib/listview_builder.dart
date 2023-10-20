@@ -27,7 +27,34 @@ class _ListViewBuilderState extends State<ListViewBuilder> {
         drawer: Drawer(
           child: ListView(
             children: [
-              DrawerHeader(child: Container(color: Colors.blue,),),
+              DrawerHeader(
+                child: Container(
+                  padding: const EdgeInsets.all(14.0),
+                  color: Colors.blue,
+                ),
+              ),
+              ListTile(
+                leading: const Icon(Icons.home),
+                title: const Text('Home'),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: const Icon(Icons.shopping_cart),
+                title: const Text('Shoping'),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: const Icon(Icons.favorite),
+                title: const Text('Favorites'),
+                onTap: () {},
+              ),
+              const Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text('Labels'),
+              ),
+              ListTile(leading: const Icon(Icons.label),title: const Text('Red'), onTap: (){},),
+              ListTile(leading: const Icon(Icons.label),title: const Text('Black'), onTap: (){},),
+              ListTile(leading: const Icon(Icons.label),title: const Text('Green'), onTap: (){},),
             ],
           ),
         ),
