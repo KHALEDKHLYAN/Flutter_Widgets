@@ -8,11 +8,11 @@ class ListViewBuilder extends StatefulWidget {
 }
 
 class _ListViewBuilderState extends State<ListViewBuilder> {
-  List<String> productd = ['Banana','Mango','Apple'];
+  List<String> productd = ['Banana', 'Mango', 'Apple'];
 
-  List<String> productdDetails = ['20kg','68kg','71kg'];
+  List<String> productdDetails = ['20kg', '68kg', '71kg'];
 
-  List<int> productdPrice = [100,150,97];
+  List<int> productdPrice = [100, 150, 97];
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +20,20 @@ class _ListViewBuilderState extends State<ListViewBuilder> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          leading: const Icon(Icons.menu),
+          // leading: const Icon(Icons.menu),
           title: const Text('ListView Builder'),
           backgroundColor: Colors.yellow,
         ),
-        body:  ListView.builder(
+        drawer: Drawer(),
+        body: ListView.builder(
           itemCount: productd.length,
-          itemBuilder: (context, index){
+          itemBuilder: (context, index) {
             return ListTile(
-              leading: CircleAvatar(child: Text(productd[index][0],),),
+              leading: CircleAvatar(
+                child: Text(
+                  productd[index][0],
+                ),
+              ),
               title: Text(productd[index]),
               subtitle: Text(productdDetails[index]),
               trailing: Text("KSH ${productdPrice[index]}"),
