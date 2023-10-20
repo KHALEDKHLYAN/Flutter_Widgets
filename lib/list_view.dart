@@ -20,7 +20,7 @@ class MyListView extends StatelessWidget {
               leading: const Icon(Icons.alarm_rounded),
               title: const Text("Alarms"),
               subtitle: const Text('Weekly Alarms'),
-              trailing: const Text('4500'),
+              trailing: const Icon(Icons.add),
               onTap: () {},
             ),
             ListTile(
