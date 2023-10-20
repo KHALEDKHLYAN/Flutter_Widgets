@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_app_design/list_view.dart';
+import 'package:widgets_app_design/listview_builder.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,6 +8,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MyListView();
+    return const ListViewBuilder();
   }
 }
