@@ -27,10 +27,11 @@ class _ListViewBuilderState extends State<ListViewBuilder> {
         drawer: Drawer(
           child: ListView(
             children: [
-              DrawerHeader(
-                child: Container(
-                  padding: const EdgeInsets.all(14.0),
-                  color: Colors.blue,
+              const UserAccountsDrawerHeader(
+                accountEmail: Text('khaledkhlyan@gmail.com'),
+                accountName: Text('KHALED_4Cus'),
+                currentAccountPicture: CircleAvatar(
+                  foregroundImage: AssetImage('assets/sanaku.jpg'),
                 ),
               ),
               ListTile(
@@ -52,9 +53,21 @@ class _ListViewBuilderState extends State<ListViewBuilder> {
                 padding: EdgeInsets.all(16.0),
                 child: Text('Labels'),
               ),
-              ListTile(leading: const Icon(Icons.label),title: const Text('Red'), onTap: (){},),
-              ListTile(leading: const Icon(Icons.label),title: const Text('Black'), onTap: (){},),
-              ListTile(leading: const Icon(Icons.label),title: const Text('Green'), onTap: (){},),
+              ListTile(
+                leading: const Icon(Icons.label),
+                title: const Text('Red'),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: const Icon(Icons.label),
+                title: const Text('Black'),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: const Icon(Icons.label),
+                title: const Text('Green'),
+                onTap: () {},
+              ),
             ],
           ),
         ),
