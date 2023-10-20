@@ -24,7 +24,13 @@ class _ListViewBuilderState extends State<ListViewBuilder> {
           title: const Text('ListView Builder'),
           backgroundColor: Colors.yellow,
         ),
-        drawer: Drawer(),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(child: Container(color: Colors.blue,),),
+            ],
+          ),
+        ),
         body: ListView.builder(
           itemCount: productd.length,
           itemBuilder: (context, index) {
