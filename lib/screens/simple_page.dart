@@ -7,7 +7,9 @@ class MySimpleScren extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.yellow,
         appBar: AppBar(title: const Text('My Simple Screen'),
         backgroundColor: Colors.blueGrey,),
         drawer: Drawer(
@@ -60,8 +62,8 @@ class MySimpleScren extends StatelessWidget {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
-          backgroundColor: Colors.amber,
-          foregroundColor: Colors.black,
+          backgroundColor: Colors.black,
+          foregroundColor: Colors.white,
           child: const Icon(Icons.add),
         ),
         bottomNavigationBar: const BottomAppBar(
