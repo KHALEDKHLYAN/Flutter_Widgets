@@ -148,6 +148,7 @@ class MySimpleScren extends StatelessWidget {
               children: [
                 Expanded(
                   child: Image.asset('assets/2g0x.jpg',
+                  width: 300.0, height: 300.0,
                       ),
                 ),
               ],
