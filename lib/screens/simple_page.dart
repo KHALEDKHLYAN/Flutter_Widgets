@@ -68,6 +68,7 @@ class MySimpleScren extends StatelessWidget {
         ),
         bottomNavigationBar: const BottomAppBar(
           notchMargin: 5.0,
+          height: 90.0,
           shape: CircularNotchedRectangle(),
           color: Colors.black87,
           // color: Colors.black,

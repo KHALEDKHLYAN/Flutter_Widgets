@@ -15,31 +15,52 @@ class MyListView extends StatelessWidget {
         ),
         body: ListView(
           itemExtent: 100.0,
-          children: [
-            ListTile(
-              leading: const Icon(Icons.alarm_rounded),
-              title: const Text("Alarms"),
-              subtitle: const Text('Weekly Alarms'),
-              trailing: const Icon(Icons.add),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(Icons.alarm_rounded),
-              title: const Text("Alarms"),
-              subtitle: const Text('Weekly Alarms'),
-              trailing: const Text('4500'),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(Icons.alarm_rounded),
-              title: const Text("Alarms"),
-              subtitle: const Text('Weekly Alarms'),
-              trailing: const Text('4500'),
-              onTap: () {},
-            ),
-          ],
+          children: List.generate(items.length, (index) {
+            ListItem item = items[index];
+
+            return ListTile(
+              leading: item.icon,
+              title: Text(item.title!),
+              subtitle: Text(item.subtitle!),
+              trailing: Text(item.trailing!),
+            );
+            
+          }),
         ),
       ),
     );
   }
 }
+
+
+class ListItem {
+  final Icon? icon;
+  final String? title;
+  final String? subtitle;
+  final String? trailing;
+  
+  ListItem({this.title, this.icon, this.subtitle, this.trailing});
+}
+
+List<ListItem> items = [
+  ListItem(
+    title: "Alarms",
+    subtitle: 'Weekly Alarms',
+    trailing: '4500',
+    icon: const Icon(Icons.alarm_rounded)
+  ),
+  ListItem(
+    title: "Alarms",
+    subtitle: 'Weekly Alarms',
+    trailing: '4500',
+    icon: const Icon(Icons.alarm_rounded)
+  ),
+  ListItem(
+    title: "Alarms",
+    subtitle: 'Weekly Alarms',
+    trailing: '4500',
+    icon: const Icon(Icons.alarm_rounded)
+  ),
+];
+
+// generate a list of three ListItem items in this code above?
