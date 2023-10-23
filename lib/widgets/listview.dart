@@ -1,17 +1,32 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
+class ListTileWidget extends StatefulWidget {
 
-class ListTileWidget extends StatelessWidget {
-  const ListTileWidget({
-    super.key,
+  String title, subTitle;
+  IconData leadingIcon, trailingIcon;
+  Color? listTileColor, iconColor;
+
+  ListTileWidget({super.key, 
+    required this.title,
+    required this.subTitle,
+    this.leadingIcon = Icons.label,
+    this.trailingIcon = Icons.add_shopping_cart  ,
+    this.listTileColor,
+    this.iconColor,
   });
 
+  @override
+  State<ListTileWidget> createState() => _ListTileWidgetState();
+}
+
+class _ListTileWidgetState extends State<ListTileWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: ListTile(
-        tileColor: Colors.black26,
+        tileColor: widget.listTileColor,
         shape: ContinuousRectangleBorder(
             borderRadius: BorderRadius.circular(10),
             side: const BorderSide(
@@ -20,19 +35,19 @@ class ListTileWidget extends StatelessWidget {
             )),
         leading: IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.mouse_outlined),
+          icon:  Icon(widget.leadingIcon),
           color: Colors.blue,
         ),
-        title: const Text(
-          'Mouse',
-          style: TextStyle(
+        title:  Text(
+          widget.title,
+          style: const TextStyle(
               color: Colors.black,
               fontSize: 14.0,
               fontWeight: FontWeight.bold),
         ),
-        subtitle: const Text('4Cm HPModel'),
+        subtitle: Text(widget.subTitle),
         trailing: IconButton(
-            onPressed: () {}, icon: const Icon(Icons.shop_outlined)),
+            onPressed: () {}, icon:  Icon(widget.trailingIcon)),
       ),
     );
   }

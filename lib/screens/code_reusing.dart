@@ -15,14 +15,22 @@ class ReusingCode extends StatelessWidget {
           backgroundColor: Colors.blueGrey,
         ),
         body: ListView(
-          children: const [
-            ListTileWidget(),
-            ListTileWidget(),
-            ListTileWidget(),
-            ],
+          children: [
+            ListTileWidget(
+              title: 'Mouse',
+              subTitle: 'A4Tech Mouse',
+              leadingIcon: Icons.mouse,
+              listTileColor: Colors.black26,
+            ),
+            ListTileWidget(
+              title: 'Laptop',
+              subTitle: 'best3D Laptop',
+              leadingIcon: Icons.laptop_mac,
+              listTileColor: Colors.black38,
+            ),
+          ],
         ),
       ),
     );
   }
 }
-
