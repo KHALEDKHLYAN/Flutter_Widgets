@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+// import 'package:widgets_app_design/list_view.dart';
+import 'package:widgets_app_design/listview_builder.dart';
 
 class MySimpleScren extends StatelessWidget {
   const MySimpleScren({super.key});
@@ -10,8 +11,10 @@ class MySimpleScren extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.yellow,
-        appBar: AppBar(title: const Text('My Simple Screen'),
-        backgroundColor: Colors.blueGrey,),
+        appBar: AppBar(
+          title: const Text('My Simple Screen'),
+          backgroundColor: Colors.blueGrey,
+        ),
         drawer: Drawer(
           child: ListView(
             children: [
@@ -148,15 +151,15 @@ class MySimpleScren extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                  child: Image.asset('assets/2g0x.jpg',
-                  width: 300.0, height: 300.0,
-                      ),
+                  child: Image.asset(
+                    'assets/2g0x.jpg',
+                    width: 300.0,
+                    height: 300.0,
+                  ),
                 ),
               ],
             ),
-             const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+            const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Icon(Icons.star),
               Icon(Icons.star),
               Icon(Icons.star_half),
@@ -167,13 +170,13 @@ class MySimpleScren extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(    
+                Column(
                   children: [
                     Image.asset(
                       'assets/2g0x.jpg',
                       width: 200,
                       height: 100,
-                    ), 
+                    ),
                     const Text('Kuroko'),
                   ],
                 ),
@@ -198,6 +201,19 @@ class MySimpleScren extends StatelessWidget {
                   ],
                 ),
               ],
+            ),
+            OutlinedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return const ListViewBuilder();
+                }));
+              },  
+              
+              style: OutlinedButton.styleFrom(minimumSize: const Size(200, 50)),
+              child: Text(
+                'Submit Btn'.toUpperCase(),
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),
