@@ -24,22 +24,30 @@ class MySimpleScreen extends StatelessWidget {
                   foregroundImage: AssetImage('assets/sanaku.jpg'),
                 ),
               ),
-              buildListTile(Icons.home, 'Home', () { }),
-              buildListTile(Icons.shopping_cart, 'shopping', () { }),
-              buildListTile(Icons.favorite, 'Favorite', () { }),
+              buildListTile(Icons.home, 'Home', () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const ListViewBuilder();
+                }));
+              }),
+              buildListTile(Icons.shopping_cart, 'shopping', () {}),
+              buildListTile(Icons.favorite, 'Favorite', () {}),
               const Padding(
                 padding: EdgeInsets.all(16.0),
                 child: Text('Labels'),
               ),
-              buildListTile(Icons.label, 'Red', () { }),
-              buildListTile(Icons.label, 'Black', () { }),
-              buildListTile(Icons.label, 'Green', () { }),
+              buildListTile(Icons.label, 'Red', () {}),
+              buildListTile(Icons.label, 'Black', () {}),
+              buildListTile(Icons.label, 'Green', () {}),
             ],
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return const ListViewBuilder();
+            }));
+          },
           backgroundColor: Colors.black,
           foregroundColor: Colors.white,
           child: const Icon(Icons.add),
@@ -66,7 +74,7 @@ class MySimpleScreen extends StatelessWidget {
                       Text(
                         "Home",
                         style: TextStyle(color: Colors.white),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -99,7 +107,7 @@ class MySimpleScreen extends StatelessWidget {
                       Text(
                         "Fav",
                         style: TextStyle(color: Colors.white),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -184,7 +192,8 @@ class MySimpleScreen extends StatelessWidget {
                     return const ListViewBuilder();
                   }));
                 },
-                style: OutlinedButton.styleFrom(minimumSize: const Size(200, 50)),
+                style:
+                    OutlinedButton.styleFrom(minimumSize: const Size(200, 50)),
                 child: Text(
                   'Submit Btn'.toUpperCase(),
                   style: const TextStyle(fontWeight: FontWeight.bold),

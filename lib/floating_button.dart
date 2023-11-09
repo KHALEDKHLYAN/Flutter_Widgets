@@ -6,7 +6,15 @@ class FloatingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        drawer: Drawer(
+          child: const DrawerHeader(decoration: BoxDecoration(
+                color: Colors.yellow,
+              ),
+              child: Text('Drawer Header'),
+            ),
+        ),
         appBar: AppBar(
           title: const Text('Floating Button Example'),
           backgroundColor: Colors.green,
@@ -45,7 +53,7 @@ class FloatingButton extends StatelessWidget {
                 ),
                 Padding(
                   padding:
-                      EdgeInsets.only(right: 20.0, top: 10.0, bottom: 10.0),
+                      EdgeInsets.only(left: 15.0, top: 5.0, bottom: 5.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -61,7 +69,7 @@ class FloatingButton extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 20.0, top: 10.0, bottom: 10.0),
+                  padding: EdgeInsets.only(left: 15.0, top: 5.0, bottom: 5.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
