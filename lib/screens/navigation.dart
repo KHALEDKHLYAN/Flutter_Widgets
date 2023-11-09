@@ -18,7 +18,9 @@ class NavigateScreens extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const SecondRoute()),
+                MaterialPageRoute(
+                  builder: (context) => const SecondRoute(),
+                ),
               );
             },
             child: const Text(

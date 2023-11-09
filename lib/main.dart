@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_app_design/screens/navigation.dart';
+import 'package:widgets_app_design/screens/simple_page.dart';
+// import 'package:widgets_app_design/screens/navigation.dart';
+// import 'package:widgets_app_design/screens/simpledetail.dart';
 // import 'package:widgets_app_design/screens/simple_page.dart';
 // import 'package:widgets_app_design/screens/code_reusing.dart';
 // import 'package:widgets_app_design/widgets/stlss_stful.dart';
@@ -14,6 +16,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const NavigateScreens();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      home: const MySimpleScreen(),
+    );
   }
 }

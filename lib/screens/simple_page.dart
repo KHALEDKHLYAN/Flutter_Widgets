@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:widgets_app_design/list_view.dart';
 import 'package:widgets_app_design/listview_builder.dart';
 
-class MySimpleScren extends StatelessWidget {
-  const MySimpleScren({super.key});
+class MySimpleScreen extends StatelessWidget {
+  const MySimpleScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,40 +24,16 @@ class MySimpleScren extends StatelessWidget {
                   foregroundImage: AssetImage('assets/sanaku.jpg'),
                 ),
               ),
-              ListTile(
-                leading: const Icon(Icons.home),
-                title: const Text('Home'),
-                onTap: () {},
-              ),
-              ListTile(
-                leading: const Icon(Icons.shopping_cart),
-                title: const Text('Shoping'),
-                onTap: () {},
-              ),
-              ListTile(
-                leading: const Icon(Icons.favorite),
-                title: const Text('Favorites'),
-                onTap: () {},
-              ),
+              buildListTile(Icons.home, 'Home', () { }),
+              buildListTile(Icons.shopping_cart, 'shopping', () { }),
+              buildListTile(Icons.favorite, 'Favorite', () { }),
               const Padding(
                 padding: EdgeInsets.all(16.0),
                 child: Text('Labels'),
               ),
-              ListTile(
-                leading: const Icon(Icons.label),
-                title: const Text('Red'),
-                onTap: () {},
-              ),
-              ListTile(
-                leading: const Icon(Icons.label),
-                title: const Text('Black'),
-                onTap: () {},
-              ),
-              ListTile(
-                leading: const Icon(Icons.label),
-                title: const Text('Green'),
-                onTap: () {},
-              ),
+              buildListTile(Icons.label, 'Red', () { }),
+              buildListTile(Icons.label, 'Black', () { }),
+              buildListTile(Icons.label, 'Green', () { }),
             ],
           ),
         ),
@@ -146,78 +121,87 @@ class MySimpleScren extends StatelessWidget {
                 ),
               ]),
         ),
-        body: Column(
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: Image.asset(
-                    'assets/2g0x.jpg',
-                    width: 300.0,
-                    height: 300.0,
-                  ),
-                ),
-              ],
-            ),
-            const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Icon(Icons.star),
-              Icon(Icons.star),
-              Icon(Icons.star_half),
-              Icon(Icons.star_half),
-              Icon(Icons.star_outline),
-              Icon(Icons.star_outline),
-            ]),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [
-                    Image.asset(
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: Image.asset(
                       'assets/2g0x.jpg',
-                      width: 200,
-                      height: 100,
+                      width: 300.0,
+                      height: 300.0,
                     ),
-                    const Text('Kuroko'),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Image.asset(
-                      'assets/sanaku.jpg',
-                      width: 200,
-                      height: 100,
-                    ),
-                    const Text('Bleach anime'),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Image.asset(
-                      'assets/bleach.jpg',
-                      width: 100,
-                      height: 100,
-                    ),
-                    const Text('Bleach anime'),
-                  ],
-                ),
-              ],
-            ),
-            OutlinedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return const ListViewBuilder();
-                }));
-              },  
-              
-              style: OutlinedButton.styleFrom(minimumSize: const Size(200, 50)),
-              child: Text(
-                'Submit Btn'.toUpperCase(),
-                style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
               ),
-            ),
-          ],
+              const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star_half),
+                Icon(Icons.star_half),
+                Icon(Icons.star_outline),
+                Icon(Icons.star_outline),
+              ]),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [
+                      Image.asset(
+                        'assets/2g0x.jpg',
+                        width: 200,
+                        height: 100,
+                      ),
+                      const Text('Kuroko'),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset(
+                        'assets/sanaku.jpg',
+                        width: 200,
+                        height: 100,
+                      ),
+                      const Text('Bleach anime'),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Image.asset(
+                        'assets/bleach.jpg',
+                        width: 100,
+                        height: 100,
+                      ),
+                      const Text('Bleach anime'),
+                    ],
+                  ),
+                ],
+              ),
+              OutlinedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const ListViewBuilder();
+                  }));
+                },
+                style: OutlinedButton.styleFrom(minimumSize: const Size(200, 50)),
+                child: Text(
+                  'Submit Btn'.toUpperCase(),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
+}
+
+ListTile buildListTile(IconData icon, String text, VoidCallback onTap) {
+  return ListTile(
+    leading: Icon(icon),
+    title: Text(text),
+    onTap: onTap,
+  );
 }
